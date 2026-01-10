@@ -92,7 +92,45 @@
   }
 }
 
-@layer layout {}
+@layer layout {
+  .bento-grid {
+    display: grid;
+    gap: 24px;
+  }
+
+  /* >* selecting all the direct children of bento-grid class  */
+.bento-grid>* {
+  color: var(--bento-card-foreground, var(--black));
+  /* created a variable to store a default background color  */
+  background-color: var(--bento-card-surface, var(--white));
+  padding: var(--bento-card-padding, 32px);
+  border-radius: var(--bento-card-border-radius, 20px);
+
+  display: grid;
+  gap: var(--bento-card-gap, 32px);
+  align-content: var(--bento-card-vertical-alignment, start);
+  justify-items: var(--bento-card-horizonal-alignment), start;
+  text-align: var(--bento-card-horizonal-alignment, start);
+
+.bento-grid img {
+  max-width: var(--bento-card-image-width, 100%);
+  width: var(--bento-card-image-width, 100%);
+  order: var(--bento-card-image-order);
+}
+
+
+.bento-grid> :nth-child(1) {
+  --heading-font-size: var(--fs-xl);
+  --heading-span-foreground: var(--accent-base);
+  --bento-card-foreground: var(--white);
+  --bento-card-surface: var(--primary-base);
+  --bento-card-padding: 48px;
+  --bento-card-horizontal-alignment: center;
+  --bento-card-image-width: 70%;
+  --bento-card-gap: 16px;
+
+
+}
 
 @layer utilities {
   .visually-first {
